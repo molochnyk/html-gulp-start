@@ -1,0 +1,159 @@
+@import "fonts";
+@import "libs";
+@import "vars";
+
+*::-webkit-input-placeholder{
+  color: #000;
+  opacity: 1;
+}
+*:-moz-placeholder{
+  color: #000;
+  opacity: 1;
+}
+*::-moz-placeholder{
+  color: #000;
+  opacity: 1;
+}
+*:-ms-input-placeholder{
+  color: #000;
+  opacity: 1;
+}
+
+::selection {
+	background-color: $accent;
+	color: #fff;
+}
+body input:focus:required:invalid,
+body textarea:focus:required:invalid{
+  color: #000;
+}
+body input:required:valid,
+body textarea:required:valid{
+  color: #000;
+}
+html, body{
+  height: 100%;
+}
+body{
+  font-size: 16px;
+  min-width: 320px;
+  position: relative;
+  line-height: 1.4;
+  font-family: $default-font;
+  overflow-x: hidden;
+  color: $text;
+  input, textarea {
+		border: #666 1px solid;
+		outline: none;
+		&:focus:required:invalid {
+			border-color: red;
+		}
+		&:required:valid {
+			border-color: green;
+		}
+	}
+}
+
+/*DEFAULT STYLE*/
+a{
+  text-decoration: none;
+  color: #000;
+}
+a:hover{
+  color: #2e2e2e;
+}
+p{
+  margin: 0;
+}
+ul{
+  padding-left: 0;
+  list-style-type: none;
+}
+h1,h2,h3,h4,h5,h6{
+  margin: 0;
+  line-height: 1;
+}
+
+//class
+.img_background{
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.img-responsive {
+	display: block;
+	max-width: 100%;
+	height: auto;
+	&.img-width {
+		width: 100%;
+	}
+}
+
+.text-center {
+	text-align: center;
+}
+
+b, strong {
+	font-weight: bold;
+}
+
+.icon{
+  display: inline-block;
+}
+/*RULE THIS PAGE*/
+
+
+
+
+/*----------------*/
+/******HEADER******/
+/*----------------*/
+.header{
+  .header_box{
+    text-align: center;
+    margin-bottom: 50px;
+    h1{
+      font-size: 60px;
+    }
+  }
+}
+.box{
+  .box_item{
+    font-size: 18px;
+    page-break-after: 5px;
+    margin-bottom: 30px;
+  }
+}
+.mg-20{
+  margin-bottom: 20px;
+}
+
+
+
+.icon-1 {
+  background-image: url('../img/sprite.png');
+  background-position: 0px 0px;
+  width: 256px;
+  height: 256px;
+}
+.icon-2 {
+  background-image: url('../img/sprite.png');
+  background-position: -256px 0px;
+  width: 256px;
+  height: 256px;
+}
+.icon-3 {
+  background-image: url('../img/sprite.png');
+  background-position: 0px -256px;
+  width: 256px;
+  height: 256px;
+}
+.icon-4 {
+  background-image: url('../img/sprite.png');
+  background-position: -256px -256px;
+  width: 256px;
+  height: 256px;
+}
+
+
+@import "media"; // Всегда в конце
