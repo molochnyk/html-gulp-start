@@ -15,21 +15,21 @@ var gulp           = require('gulp'),
 		spritesmith    = require('gulp.spritesmith');
 
 // Скрипты проекта
-gulp.task('common-js', function() {
+gulp.task('main-js', function() {
 	return gulp.src([
-		'app/js/common.js',
+		'app/js/main.js',
 		])
-	.pipe(concat('common.min.js'))
+	.pipe(concat('main.js'))
 	//.pipe(uglify()) //Минимизировать js
 	.pipe(gulp.dest('app/js'));
 });
 
-gulp.task('js', ['common-js'], function() {
+gulp.task('js', ['main-js'], function() {
 	return gulp.src([
 		'app/libs/jquery/dist/jquery.min.js',
 		'./node_modules/magnific-popup/dist/jquery.magnific-popup.min.js',
 		'./node_modules/owl.carousel/dist/owl.carousel.min.js',
-		'app/js/common.min.js', // Всегда в конце
+		'app/js/main.js', // Всегда в конце
 		])
 	.pipe(concat('scripts.min.js'))
 	// .pipe(uglify()) // Минимизировать весь js (на выбор)
@@ -60,7 +60,7 @@ gulp.task('sass', function() {
 
 gulp.task('watch', ['sass', 'js', 'browser-sync'], function() {
 	gulp.watch('app/sass/**/*.scss', ['sass']);
-	gulp.watch(['libs/**/*.js', 'app/js/common.js'], ['js']);
+	gulp.watch(['libs/**/*.js', 'app/js/main.js'], ['js']);
 	gulp.watch('app/*.html', browserSync.reload);
 });
 

@@ -1,4 +1,4 @@
-<img src="app/img/readme-img.png" alt="gulp" style=" text-align: center; " >
+<img src="app/img/readme-img.png" alt="gulp" style="text-align: center;" >
 <h1 style=" text-align: center; ">gulp-start-bundle(HTML,SCSS)</h1>
 <ol>
   <li>download archive</li>
