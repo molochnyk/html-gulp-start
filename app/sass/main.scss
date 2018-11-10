@@ -1,54 +1,16 @@
+// Fonts and Font-Icon
 @import "fonts";
+// Libraries
 @import "libs";
-@import "default";
+// Base style (Html,Body,Ul,Li,a, more ... )
+@import "base";
+// Base class style (color,display, more ... )
+@import "classes";
+// Repead blocks (title, section, div more... )
 @import "repead";
-
-
-/*----------------*/
-/******HEADER******/
-/*----------------*/
-.header{
-  .header_box{
-    text-align: center;
-    margin-bottom: 50px;
-  }
-}
-.box{
-  .box_item{
-    font-size: 18px;
-    page-break-after: 5px;
-    margin-bottom: 30px;
-  }
-}
-.mg-20{
-  margin-bottom: 20px;
-}
-
-
-.icon-1 {
-  background-image: url('../img/sprite.png');
-  background-position: 0px 0px;
-  width: 256px;
-  height: 256px;
-}
-.icon-2 {
-  background-image: url('../img/sprite.png');
-  background-position: -256px 0px;
-  width: 256px;
-  height: 256px;
-}
-.icon-3 {
-  background-image: url('../img/sprite.png');
-  background-position: 0px -256px;
-  width: 256px;
-  height: 256px;
-}
-.icon-4 {
-  background-image: url('../img/sprite.png');
-  background-position: -256px -256px;
-  width: 256px;
-  height: 256px;
-}
-
-
-@import "media"; // Всегда в конце
+// Components block style (button list link more ...)
+@import "./_modules/modules";
+// Page style
+@import "page";
+// Media adaptiv
+@import "media";
