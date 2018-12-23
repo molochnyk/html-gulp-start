@@ -59,7 +59,9 @@ gulp.task('sass', function() {
 });
 
 gulp.task('watch', ['sass', 'js', 'browser-sync'], function() {
-	gulp.watch('app/sass/**/*.scss', ['sass']);
+	setTimeout(function() {
+		gulp.watch('app/sass/**/*.scss', ['sass']);
+	}, 500);
 	gulp.watch(['libs/**/*.js', 'app/js/main.js'], ['js']);
 	gulp.watch('app/*.html', browserSync.reload);
 });
