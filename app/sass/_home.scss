@@ -40,27 +40,3 @@
   width: 256px;
   height: 256px;
 }
-
-/*==========  Desktop First  ==========*/
-
-// // ≥1200px
-@media(max-width: 1200px) {
-  body {
-    background-color: #000;
-  }
-}
-
-// ≥992px
-@media(max-width: 992px) {}
-
-// ≥768px
-@media(max-width: 768px) {}
-
-// ≥576px
-@media(max-width: 576px) {}
-
-@media(max-width: 480px) {}
-
-@media(max-width: 375px) {}
-
-@media(max-width: 320px) {}

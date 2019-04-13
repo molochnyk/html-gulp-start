@@ -1,18 +1,20 @@
-var gulp           = require('gulp'),
-		gutil          = require('gulp-util' ),
-		sass           = require('gulp-sass'),
-		browserSync    = require('browser-sync'),
-		concat         = require('gulp-concat'),
-		uglify         = require('gulp-uglify'),
-		cleanCSS       = require('gulp-clean-css'),
-		rename         = require('gulp-rename'),
-		del            = require('del'),
-		imagemin       = require('gulp-imagemin'),
-		cache          = require('gulp-cache'),
-		autoprefixer   = require('gulp-autoprefixer'),
-		ftp            = require('vinyl-ftp'),
-		notify         = require("gulp-notify"),
-		spritesmith    = require('gulp.spritesmith');
+const gulp 					= require('gulp');
+const	sass 					= require('gulp-sass');
+const	browserSync 	= require('browser-sync');
+const	concat 				= require('gulp-concat');
+const	cleanCSS 			= require('gulp-clean-css');
+const	rename				= require('gulp-rename');
+const	del 					= require('del');
+const	imagemin 			= require('gulp-imagemin');
+const	cache 				= require('gulp-cache');
+const	autoprefixer 	= require('gulp-autoprefixer');
+const	notify				= require("gulp-notify");
+const	spritesmith 	= require('gulp.spritesmith');
+const	gcmq 					= require('gulp-group-css-media-queries');
+// const uglify 				= require('gulp-uglify'),
+		
+
+let njkRender = require('gulp-nunjucks-render');
 
 // Скрипты проекта
 gulp.task('main-js', function() {
@@ -53,17 +55,32 @@ gulp.task('sass', function() {
 	.pipe(sass({outputStyle: 'expand'}).on("error", notify.onError()))
 	.pipe(rename({suffix: '.min', prefix : ''}))
 	.pipe(autoprefixer(['last 15 versions']))
+	.pipe(gcmq())
 	.pipe(cleanCSS()) // Опционально, закомментировать при отладке
 	.pipe(gulp.dest('app/css'))
 	.pipe(browserSync.reload({stream: true}));
 });
 
-gulp.task('watch', ['sass', 'js', 'browser-sync'], function() {
+// создаем gulp задачу на компиляцию всех nunjucks шаблонов в текущей директории
+gulp.task('nunjucks', function() {
+  // Gets .html and .nunjucks files in pages
+  return gulp.src('./app/pages/**/*.+(html|nunjucks)')
+  // Renders template with nunjucks
+  .pipe(njkRender({
+		path: ['./app/templates']
+  }))
+  // output files in app folder
+	.pipe(gulp.dest('./app'))
+	.pipe(browserSync.reload({stream: true}));
+});
+
+gulp.task('watch', [ 'nunjucks', 'sass', 'js', 'browser-sync'], function() {
 	setTimeout(function() {
 		gulp.watch('app/sass/**/*.scss', ['sass']);
-	}, 500);
+	}, 1000);
 	gulp.watch(['libs/**/*.js', 'app/js/main.js'], ['js']);
-	gulp.watch('app/*.html', browserSync.reload);
+	gulp.watch(['./app/pages' + '/**/*.+(html|nunjucks)', './app/templates' + '/**/*.+(html|nunjucks)'], ['nunjucks']);
+	// gulp.watch('./app/pages/**/*.+(html|nunjucks)', ['nunjucks'], browserSync.reload);
 });
 
 gulp.task('imagemin', function() {
@@ -79,48 +96,6 @@ gulp.task('sprite', function () {
     cssName: 'sprite.css'
   }));
   return spriteData.pipe(gulp.dest('app/img'));
-});
-
-
-
-gulp.task('build', ['removedist', 'imagemin', 'sass', 'js'], function() {
-
-	var buildFiles = gulp.src([
-		'app/*.html',
-		'app/.ht.access',
-		]).pipe(gulp.dest('dist'));
-
-	var buildCss = gulp.src([
-		'app/css/main.min.css',
-		]).pipe(gulp.dest('dist/css'));
-
-	var buildJs = gulp.src([
-		'app/js/scripts.min.js',
-		]).pipe(gulp.dest('dist/js'));
-
-	var buildFonts = gulp.src([
-		'app/fonts/**/*',
-		]).pipe(gulp.dest('dist/fonts'));
-
-});
-
-gulp.task('deploy', function() {
-
-	var conn = ftp.create({
-		host:      'hostname.com',
-		user:      'username',
-		password:  'userpassword',
-		parallel:  10,
-		log: gutil.log
-	});
-
-	var globs = [
-	'dist/**',
-	'dist/.htaccess',
-	];
-	return gulp.src(globs, {buffer: false})
-	.pipe(conn.dest('/path/to/folder/on/server'));
-
 });
 
 gulp.task('removedist', function() { return del.sync('dist'); });
