@@ -10,5 +10,7 @@
 @import "repead";
 // Components block style (button list link more ...)
 @import "./_modules/modules";
+// Page Home ~ Landing
+@import "../sass/home.scss";
 // Media adaptiv
-// @import "media";
+@import "media";
