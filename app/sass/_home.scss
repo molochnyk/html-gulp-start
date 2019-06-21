@@ -1,4 +1,5 @@
 @import '../sass/_part/header';
+@import '../sass/_part/nav';
 
 .box {
   .box_item {
@@ -40,3 +41,5 @@
   width: 256px;
   height: 256px;
 }
+
+@import '../sass/_part/footer';
