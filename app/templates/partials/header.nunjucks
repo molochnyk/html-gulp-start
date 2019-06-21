@@ -2,6 +2,7 @@
   <div class="container">
     <div class="header_box">
       <h1>This is HEADER</h1>
+      <a class="js-popup-open" href="#popup">Open</a>
     </div>
   </div>
 </header>
