@@ -5,23 +5,8 @@
   {% include "partials/header.nunjucks" %}
   {% include "partials/nav.nunjucks" %}
 
-  <section class="banner">
-    <div class="container">
-      <div class="banner_wrap">
-        <div class="row">
-          <div class="col-4">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel exercitationem optio corporis animi veritatis eius quae blanditiis reprehenderit quibusdam atque cupiditate itaque quam doloremque, quos aliquam qui eligendi tempora doloribus!
-          </div>
-          <div class="col-4">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel exercitationem optio corporis animi veritatis eius quae blanditiis reprehenderit quibusdam atque cupiditate itaque quam doloremque, quos aliquam qui eligendi tempora doloribus!
-          </div>
-          <div class="col-4">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel exercitationem optio corporis animi veritatis eius quae blanditiis reprehenderit quibusdam atque cupiditate itaque quam doloremque, quos aliquam qui eligendi tempora doloribus!
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+  {% include "block/block-1.nunjucks" %}
+
   {% include "partials/footer.nunjucks" %}
 
   {% include "modules/popup.nunjucks" %}

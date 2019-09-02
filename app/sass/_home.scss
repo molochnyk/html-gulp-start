@@ -1,45 +1,8 @@
 @import '../sass/_part/header';
 @import '../sass/_part/nav';
 
-.box {
-  .box_item {
-    font-size: 18px;
-    page-break-after: 5px;
-    margin-bottom: 30px;
-  }
-}
 
-.mg-20 {
-  margin-bottom: 20px;
-}
-
-
-.icon-1 {
-  background-image: url('../img/sprite.png');
-  background-position: 0px 0px;
-  width: 256px;
-  height: 256px;
-}
-
-.icon-2 {
-  background-image: url('../img/sprite.png');
-  background-position: -256px 0px;
-  width: 256px;
-  height: 256px;
-}
-
-.icon-3 {
-  background-image: url('../img/sprite.png');
-  background-position: 0px -256px;
-  width: 256px;
-  height: 256px;
-}
-
-.icon-4 {
-  background-image: url('../img/sprite.png');
-  background-position: -256px -256px;
-  width: 256px;
-  height: 256px;
-}
+// Main Style Block
+@import '../sass/_block/block-1.scss';
 
 @import '../sass/_part/footer';
