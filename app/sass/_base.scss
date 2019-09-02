@@ -44,13 +44,14 @@ body {
   textarea {
     border: #666 1px solid;
     outline: none;
+    box-shadow: none;
 
     &:focus:required:invalid {
-      border-color: red;
+      border-color: rgb(243, 60, 47);
     }
 
     &:required:valid {
-      border-color: green;
+      border-color: rgb(21, 243, 21);
     }
   }
 }

@@ -1,0 +1,34 @@
+.isscreen {
+  &_wrap {
+    padding: 40px 0;
+  }
+}
+
+
+.icon-1 {
+  background-image: url('../img/sprite.png');
+  background-position: 0px 0px;
+  width: 256px;
+  height: 256px;
+}
+
+.icon-2 {
+  background-image: url('../img/sprite.png');
+  background-position: -256px 0px;
+  width: 256px;
+  height: 256px;
+}
+
+.icon-3 {
+  background-image: url('../img/sprite.png');
+  background-position: 0px -256px;
+  width: 256px;
+  height: 256px;
+}
+
+.icon-4 {
+  background-image: url('../img/sprite.png');
+  background-position: -256px -256px;
+  width: 256px;
+  height: 256px;
+}
