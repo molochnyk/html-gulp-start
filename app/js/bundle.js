@@ -1,7 +1,7 @@
 $(function() {
 
 	function init() {
-		console.log(123);
+		console.log(12345);
 	}
 	init();
 
