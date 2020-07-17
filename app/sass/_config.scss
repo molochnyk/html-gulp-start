@@ -1,0 +1,242 @@
+//===============================================//
+/*Vars Page All*/
+//===============================================//
+$default-font: "RobotoCon", sans-serif;
+$accent: #1c1c55;
+$text: #333;
+$background-color: #fff;
+$ts: all 250ms linear;
+
+// Customization Bootstrap vars from "app/libs/bootstrap/scss/_variables.scss"
+$grid-gutter-width: 30px;
+$grid-columns: 12;
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+);
+$container-max-widths: (
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 1140px,
+);
+
+$gutter: $grid-gutter-width;
+
+//===============================================//
+/*Fonts Style*/
+//===============================================//
+@import "_mixins/font-face";
+
+@include font(
+  "RobotoCon",
+  normal,
+  400,
+  "../fonts/RobotoCondensed-Regular.woff2"
+);
+@include font(
+  "RobotoCon",
+  italic,
+  400,
+  "../fonts/RobotoCondensed-Italic.woff2"
+);
+@include font("RobotoCon", normal, 700, "../fonts/RobotoCondensed-Bold.woff2");
+@include font("RobotoCon", normal, 300, "../fonts/RobotoCondensed-Light.woff2");
+
+//===============================================//
+/*Repeat style*/
+//===============================================//
+.title-h1 {
+  font-size: 60px;
+  letter-spacing: 3px;
+  margin-bottom: 50px;
+}
+
+//===============================================//
+/*Base Style Page*/
+//===============================================//
+::selection {
+  background-color: $accent;
+  color: #fff;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  font-size: 16px;
+  min-width: 320px;
+  position: relative;
+  line-height: 1.4;
+  font-family: $default-font;
+  overflow-x: hidden;
+  color: $text;
+  background-color: $background-color;
+
+  input,
+  textarea {
+    border: #666 1px solid;
+    outline: none;
+    box-shadow: none;
+
+    &:focus:required:invalid {
+      border-color: rgb(243, 60, 47);
+    }
+
+    &:required:valid {
+      border-color: rgb(21, 243, 21);
+    }
+  }
+}
+
+//===============================================//
+/*DEFAULT STYLE*/
+//===============================================//
+a {
+  text-decoration: none;
+  color: #000;
+
+  &:hover {
+    color: #2e2e2e;
+    text-decoration: none;
+  }
+}
+
+b,
+strong {
+  font-weight: bold;
+}
+
+//===============================================//
+/* Components Style*/
+//===============================================//
+.m-button {
+  display: block;
+  width: 300px;
+  padding: 10px 0;
+  border: none;
+  text-align: center;
+  font-size: 18px;
+  background-color: $accent;
+  color: #fff;
+  cursor: pointer;
+}
+
+//===============================================//
+/* Class repead -- static style*/
+//===============================================//
+
+// TEXT--------------------
+.text-center {
+  text-align: center;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-right {
+  text-align: right;
+}
+
+// DISPLAY BLOCK--------------------
+.display-block {
+  display: block;
+}
+
+.margin-0-auto {
+  margin: 0 auto;
+}
+
+// DISPLAY INLINE--------------------
+.display-inlblock {
+  display: inline-block;
+}
+
+// COLOR--------------------
+.color-white {
+  color: #fff;
+}
+
+.color-black {
+  color: #fff;
+}
+
+// BACKGROUND COLOR--------------------
+.bg-color-white {
+  color: #fff;
+}
+
+.bg-color-black {
+  color: #000;
+}
+
+// BACKGROUND IMAGE--------------------
+.bg-img {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+// IMAGE--------------------
+.img-responsive {
+  display: block;
+  max-width: 100%;
+  height: auto;
+
+  &.img-width {
+    width: 100%;
+  }
+}
+
+// ICON--------------------
+.icon {
+  display: inline-block;
+}
+
+//===============================================//
+/* Libs Style All */
+//===============================================//
+
+#small-dialog {
+  background: white;
+  padding: 20px 30px;
+  text-align: left;
+  max-width: 400px;
+  margin: 40px auto;
+  position: relative;
+}
+
+.my-mfp-zoom-in .zoom-anim-dialog {
+  opacity: 0;
+  transition: all 0.2s ease-in-out;
+  transform: scale(0.8);
+}
+
+.my-mfp-zoom-in.mfp-ready .zoom-anim-dialog {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.my-mfp-zoom-in.mfp-removing .zoom-anim-dialog {
+  transform: scale(0.8);
+  opacity: 0;
+}
+
+.my-mfp-zoom-in.mfp-bg {
+  opacity: 0;
+  transition: opacity 0.3s ease-out;
+}
+
+.my-mfp-zoom-in.mfp-ready.mfp-bg {
+  opacity: 0.8;
+}
+
+.my-mfp-zoom-in.mfp-removing.mfp-bg {
+  opacity: 0;
+}

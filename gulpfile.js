@@ -4,17 +4,12 @@ const	browserSync 	= require('browser-sync');
 const	concat 				= require('gulp-concat');
 const	cleanCSS 			= require('gulp-clean-css');
 const	rename				= require('gulp-rename');
-const	del 					= require('del');
-const	imagemin 			= require('gulp-imagemin');
 const	cache 				= require('gulp-cache');
 const	autoprefixer 	= require('gulp-autoprefixer');
 const	notify				= require("gulp-notify");
-const	spritesmith 	= require('gulp.spritesmith');
 const	gcmq 					= require('gulp-group-css-media-queries');
+const njkRender = require('gulp-nunjucks-render');
 // const uglify 				= require('gulp-uglify'),
-		
-
-let njkRender = require('gulp-nunjucks-render');
 
 // Скрипты проекта
 gulp.task('main-js', function() {
@@ -28,12 +23,11 @@ gulp.task('main-js', function() {
 
 gulp.task('js', ['main-js'], function() {
 	return gulp.src([
-		'app/libs/jquery/dist/jquery.min.js',
 		'./node_modules/magnific-popup/dist/jquery.magnific-popup.min.js',
 		'./node_modules/owl.carousel/dist/owl.carousel.min.js',
-		'app/libs/modernizr-webp/modernizr-webp.js',
-		'app/libs/aos/aos.js',
-		'app/libs/lazyload/lazyload.min.js',
+		// 'app/libs/modernizr-webp/modernizr-webp.js',
+		// 'app/libs/aos/aos.js',
+		// 'app/libs/lazyload/lazyload.min.js',
 		'app/js/main.js', // Всегда в конце
 		])
 	.pipe(concat('scripts.min.js'))
@@ -64,7 +58,6 @@ gulp.task('sass', function() {
 	.pipe(browserSync.reload({stream: true}));
 });
 
-// создаем gulp задачу на компиляцию всех nunjucks шаблонов в текущей директории
 gulp.task('nunjucks', function() {
   // Gets .html and .nunjucks files in pages
   return gulp.src('./app/pages/**/*.+(html|nunjucks)')
@@ -86,22 +79,6 @@ gulp.task('watch', [ 'nunjucks', 'sass', 'js', 'browser-sync'], function() {
 	// gulp.watch('./app/pages/**/*.+(html|nunjucks)', ['nunjucks'], browserSync.reload);
 });
 
-gulp.task('imagemin', function() {
-	return gulp.src('app/img/**/*')
-	.pipe(cache(imagemin()))
-	.pipe(gulp.dest('dist/img')); 
-});
-
-//Sprite task 
-gulp.task('sprite', function () {
-  var spriteData = gulp.src('app/img/sprite/*.png').pipe(spritesmith({
-    imgName: 'sprite.png',
-    cssName: 'sprite.css'
-  }));
-  return spriteData.pipe(gulp.dest('app/img'));
-});
-
-gulp.task('removedist', function() { return del.sync('dist'); });
 gulp.task('clearcache', function () { return cache.clearAll(); });
 
 gulp.task('default', ['watch']);

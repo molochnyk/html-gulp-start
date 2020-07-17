@@ -1,8 +1,11 @@
+/*HEADER*/
 @import '../sass/_part/header';
+
+/*NAVIGATION*/
 @import '../sass/_part/nav';
 
+/*MAIN STYLE BLOKS*/
+@import '../sass/_block/isscreen';
 
-// Main Style Block
-@import '../sass/_block/block-1.scss';
-
+/*FOOTER*/
 @import '../sass/_part/footer';

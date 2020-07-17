@@ -1,16 +1,8 @@
-// Fonts and Font-Icon
-@import "fonts";
 // Libraries
 @import "libs";
-// Base style (Html,Body,Ul,Li,a, more ... )
-@import "base";
-// Base class style (color,display, more ... )
-@import "classes";
-// Repead blocks (title, section, div more... )
-@import "repead";
-// Components block style (button list link more ...)
-@import "./_modules/modules";
+
+// Different rules
+@import "config";
+
 // Page Home ~ Landing
 @import "../sass/home.scss";
-// Media adaptiv
-@import "media";

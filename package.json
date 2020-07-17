@@ -10,26 +10,23 @@
   "license": "ISC",
   "devDependencies": {
     "browser-sync": "^2.26.3",
-    "del": "^3.0.0",
     "eslint": "^5.15.3",
     "gulp": "^3.9.1",
     "gulp-autoprefixer": "^5.0.0",
     "gulp-cache": "^1.0.2",
     "gulp-clean-css": "^3.9.4",
     "gulp-concat": "^2.6.1",
-    "gulp-imagemin": "^5.0.3",
     "gulp-notify": "^3.2.0",
     "gulp-nunjucks": "^4.0.0",
     "gulp-rename": "^1.3.0",
     "gulp-sass": "^4.0.2",
     "gulp-uglify": "^3.0.0",
     "gulp-util": "^3.0.8",
-    "gulp.spritesmith": "^6.9.0",
     "magnific-popup": "^1.1.0",
-    "owl.carousel": "^2.3.4",
-    "vinyl-ftp": "^0.6.1"
+    "owl.carousel": "^2.3.4"
   },
   "dependencies": {
+    "bootstrap": "^4.5.0",
     "gulp-group-css-media-queries": "^1.2.2",
     "gulp-html-prettify": "0.0.1",
     "gulp-nunjucks-render": "^2.2.3"
