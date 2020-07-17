@@ -4,7 +4,6 @@
   }
 }
 
-
 .icon-1 {
   background-image: url('../img/sprite.png');
   background-position: 0px 0px;
@@ -32,3 +31,39 @@
   width: 256px;
   height: 256px;
 }
+
+
+/*==========  Desktop First  ==========*/
+
+// ≥1440px
+@media(max-width: 1440px) {}
+
+// ≥1280px
+@media(max-width: 1280px) {}
+
+// ≥1200px
+@include media-breakpoint-down(lg) {}
+
+// ≥1016px
+@media(max-width: 1016px) {}
+
+// ≥992px
+@include media-breakpoint-down(md) {}
+
+// ≥768px
+@include media-breakpoint-down(sm) {}
+
+// ≥576px
+@include media-breakpoint-down(xs) {}
+
+// ≥480px
+@media(max-width: 480px) {}
+
+// ≥414px
+@media(max-width: 414px) {}
+
+// ≥375px
+@media(max-width: 375px) {}
+
+// ≥320px
+@media(max-width: 320px) {}

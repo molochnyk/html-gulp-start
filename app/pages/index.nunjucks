@@ -5,7 +5,7 @@
   {% include "partials/header.nunjucks" %}
   {% include "partials/nav.nunjucks" %}
 
-  {% include "block/block-1.nunjucks" %}
+  {% include "block/isscreen.nunjucks" %}
 
   {% include "partials/footer.nunjucks" %}
 
